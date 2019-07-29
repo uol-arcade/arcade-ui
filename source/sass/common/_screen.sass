@@ -1,0 +1,63 @@
+
+.screen.hidden
+    display: none !important
+
+
+
+$li-highlight-space: -50px
+
+.screen ul.centered
+    text-align: center
+
+.screen ul li
+
+    font-family: $font-title 
+    position: relative
+    font-size: $font-size-xl * 1.5
+    letter-spacing: 3px
+    color: $fg-color-light
+
+    &:not(:first-child)
+        padding-top: $gap-small * 0.5
+
+    &.active
+        color: $highlight-color
+        animation: glow 1s steps(3) infinite
+
+        &::before
+            content: ">"
+            display: inline
+            position: absolute
+            left: $li-highlight-space
+
+        &::after
+            content: "<"
+            display: inline
+            position: absolute
+            right: $li-highlight-space
+
+
+@keyframes glow
+    0%, 100%
+        opacity: 0.6
+
+    50%
+        opacity: 1.0
+
+
+
+
+
+
+.version-info
+    font-family: $font-text
+    font-size: $font-size-l
+    letter-spacing: 1px
+
+    position: absolute
+    bottom: 0
+    margin: $gap-xl
+    display: none
+    
+    span
+        color: $highlight-color

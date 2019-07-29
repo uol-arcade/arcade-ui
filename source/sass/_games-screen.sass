@@ -1,0 +1,58 @@
+$preview-image-width: 350px
+$aside-width: 600px
+
+.games.screen
+    padding: $gap-xxxl * 1.25 0
+    width: 100vw
+    position: absolute
+    top: 50vh
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    transform: translateY(-50%)
+
+    .game
+        display: grid
+        grid-template-columns: auto 1fr
+
+        .buttons
+            padding-top: $gap-l * 2.5
+            display: flex
+            justify-content: flex-end
+
+            button:not(:last-child)
+                margin-right: $gap-l * 4
+
+        aside
+
+            width: $aside-width
+            margin-left: $gap-xl * 3.5
+            display: flex
+            align-items: center
+
+            .wrapper
+                display: inline-block
+
+            h1
+                font-size: $font-size-xl * 2
+                font-weight: 100
+                letter-spacing: 3px
+
+            h2
+                font-size: $font-size-xxl
+                font-weight: 100
+                color: $fg-color-lighter
+                font-family: $font-text
+
+                span
+                    margin: $gap-l * 0.4
+                    color: $fg-color
+
+            p
+                font-family: $font-text
+                font-size: $font-size-xl
+                margin-top: $gap-xxl
+                line-height: $font-size-xl
+
+        img
+            width: $preview-image-width
+            height: $preview-image-width

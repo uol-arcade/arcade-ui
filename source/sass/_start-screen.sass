@@ -1,0 +1,28 @@
+$start-image-size: 500px
+$blink-time: 2s
+
+.start.screen
+    display: inline-block
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    img.splash
+        width: $start-image-size
+
+    h3
+        margin-top: $gap-xxl
+        text-align: center
+        font-family: $font-text
+        font-size: $font-size-xl * 2
+
+
+    animation: blink $blink-time steps(1) infinite 
+
+
+@keyframes blink
+    0%
+        opacity: 0
+    50%
+        opacity: 1.0
