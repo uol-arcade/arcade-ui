@@ -56,3 +56,24 @@ $aside-width: 600px
         img
             width: $preview-image-width
             height: $preview-image-width
+
+
+        &.transitionOut
+            animation: fadeOut 0.5s forwards
+
+
+
+        &.transitionIn
+            animation: fadeIn 0.5s forwards
+
+            h1
+                animation: fadeInUp 0.5s forwards
+
+            h2
+                animation: fadeInUp 1s forwards
+
+            p
+                animation: fadeInUp 1.5s forwards
+            
+            img
+                animation: fadeInDown 1s forwards

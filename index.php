@@ -4,10 +4,16 @@
         
         <link href="assets/fonts/pocket/pocket.css" rel="stylesheet" type="text/css"/>
         <link href="assets/fonts/upheaval/upheaval.css" rel="stylesheet" type="text/css"/>
-
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha256-PHcOkPmOshsMBC+vtJdVr5Mwb7r0LkSVJPlPrp/IMpU=" crossorigin="anonymous" />
         <link href="dist/css/arcade-ui.min.css" rel="stylesheet" type="text/css"/>
+
+        <script type="text/javascript">
+        var arcade = {};
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+        <script src="source/js.min.js"></script>
+
     </head>
     <body>
 
@@ -81,21 +87,24 @@
             </button>
         </article>
 
-        <article class="games screen">
+        <article class="games screen" @keyup.right="right">
             <button class="chevron left">
-                &lt;
+                <span v-show="currentIndex > 0">&lt;</span>
             </button>
-            <section class="game">
+            <section :data-target-path="currentGame.path" class="game">
                 <figure>
-                    <img src="assets/images/adis-maze.png"/>
+                    <img :src="currentGame.imagePath"/>
                 </figure>
                 <aside>
                     <span class="wrapper">
-                        <h1>Adi's Maze Unlimited</h1>
-                        <h2>Platformer <span>|</span> 1-2 players <span>|</span> Benjamin Williams</h2>
+                        <h1>{{ currentGame.title }}</h1>
+                        <h2>
+                            {{ currentGame.genre }} <span>|</span>
+                            {{ currentGame.players | formatPlayers }} <span>|</span>
+                            {{ currentGame.author }}
+                        </h2>
                         <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt a maxime iste obcaecati necessitatibus quaerat qui.
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt fuga cum, voluptas perferendis iusto iste? Explicabo provident error quo, eaque, eius doloremque sed obcaecati perspiciatis, nesciunt sunt aliquid voluptate unde.
+                            {{ currentGame.description }}
                         </p>
                         <section class="buttons">
 
@@ -112,7 +121,7 @@
                 </aside>
             </section>
             <button class="chevron right">
-                &gt;
+                <span v-show="currentIndex < (games.length - 1)">&gt;</span>
             </button>
         </article>
 
