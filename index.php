@@ -22,11 +22,66 @@
                 <li class="active">Games</li>
                 <li>Credits</li>
                 <li>About</li>
-                <li>Get Involved</li>
             </ul>
         </article>
 
-        <article class="games screen">
+        <article class="credits screen hidden">
+            <section class="credits">
+                <article>
+                    <header>
+                        <img class="credits-header" src="assets/images/research-arcade-header.png"/>
+                        <p>
+                            A project hosted and developed within the University of Lincoln School of Computer Science.
+                            Copyright &copy; University of Lincoln 2017-<?php echo date("Y"); ?>. All rights reserved.
+                            Design, development and maintenance by Benjamin Williams &lt;bwilliams@lincoln.ac.uk&gt;.
+                            More information can be found at &lt;http://researcharcade.com/&gt;.
+                        </p>
+                    </header>
+                    <ul>
+                        <li class="title">Project Lead</li>
+                        <li>Chris Headleand</li>
+                    </ul>
+                    <ul>
+                        <li class="title">Architecture Lead</li>
+                        <li>Benjamin Williams</li>
+                    </ul>
+                    <ul>
+                        <li class="title">Cabinet Design / Build</li>
+                        <li>Alex Chapman</li>
+                        <li>Charlie Volland-Butler</li>
+                        <li>Chris Headleand</li>
+                    </ul>
+                    <ul>
+                        <li class="title">Hosted Games Developers</li>
+                        <li>Chris Ross</li>
+                    </ul>
+                    <ul>
+                        <li class="title">Previous Developers</li>
+                        <li>Ben Hide</li>
+                        <li>Jake Harrington</li>
+                        <li>Marlon Gilliam</li>
+                        <li>Tom Smith</li>
+                    </ul>
+                    <ul>
+                        <li class="title">Technical Support</li>
+                        <li>Matt Ashton</li>
+                        <li>Jason Hall</li>
+                        <li>Jeff Pashley</li>
+                        <li>Tom Reed</li>
+                    </ul>
+                    <ul>
+                        <li class="title">Thanks</li>
+                        <li>Kieran Hicks</li>
+                        <li>The intLab research group</li>
+                    </ul>
+                </article>
+            </section>
+            <button class="key info primary">
+                <kbd>B</kbd> Go back
+            </button>
+        </article>
+
+        <article class="games screen hidden">
             <button class="chevron left">
                 &lt;
             </button>
@@ -59,6 +114,32 @@
             <button class="chevron right">
                 &gt;
             </button>
+        </article>
+
+        <article class="about screen">
+            <article>
+                <h1>About</h1>
+                <p>
+                    This project was developed within intLab, a research group at the University of Lincoln focusing
+                    on human-computer interaction and video games.
+                </p>
+                <p>
+                    All of the games featured on this machine are free to play, and are independently created by our
+                    staff and students. By playing our games, you are contributing to our research! For more information, scan the QR
+                    code to the right, or head on over to <span>&lt;http://researcharcade.com/&gt;</span>.
+                </p><p>
+                    If you wish to create a game to be hosted here, please get in touch with Benjamin Williams
+                    at <span>&lt;bwilliams@lincoln.ac.uk&gt;</span> for further details!
+                </p>
+            </article>
+            <figure>
+                <img src="assets/images/qr.png"/>
+            </figure>
+            <section class="buttons">
+                <button class="key info primary">
+                    <kbd><span>B</span></kbd> Back
+                </button>
+            </buttons>
         </article>
 
         <kbd class="version-info">

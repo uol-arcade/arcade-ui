@@ -1,0 +1,43 @@
+$about-info-width: 500px
+$qr-size: 250px
+
+.about.screen
+    // background-color: red
+    padding: $gap-l * 2
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: inline-grid
+    grid-template-columns: 1fr auto
+
+    article
+        width: $about-info-width
+        margin-right: $gap-xxl * 3
+
+    h1
+        font-size: $font-size-xxxl
+        margin-bottom: $gap-xxl
+
+    figure
+        display: flex
+        align-items: center
+
+    .buttons
+        margin-top: $gap-xxl * 2
+        grid-column-start: 1
+        grid-column-end: 3
+
+    figure img
+        width: $qr-size
+        border: 10px solid $fg-color
+        border-radius: 10px
+
+    p
+        font-family: $font-text
+        font-size: $font-size-xl
+        line-height: $font-size-xl
+        margin-bottom: $gap-small * 2
+
+        span
+            color: $highlight-color

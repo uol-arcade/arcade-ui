@@ -1,0 +1,62 @@
+$credits-header-size: 500px
+$credits-height: 500px
+$scroll-time: 30s
+
+.credits.screen
+    width: $credits-header-size
+    background-color: $bg-color
+    position: absolute
+    padding: $gap-l $gap-xl * 2
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    
+.credits.screen .credits
+    height: $credits-height
+    overflow: hidden
+
+    article
+        padding-top: $credits-height
+        animation: scroll $scroll-time linear infinite
+
+@keyframes scroll
+    0%
+        transform: translateY(0)
+
+    100%
+        transform: translateY(-100%)
+
+.credits.screen header
+    width: $credits-header-size
+    font-size: $font-size-regular * 1.25
+    margin-bottom: $gap-xl
+
+    p
+        font-family: $font-text
+
+    img
+        width: $credits-header-size
+
+.credits.screen article
+    ul
+        text-align: center
+
+    ul li
+        margin: 0
+        padding: 0
+        font-size: $font-size-l
+
+    ul li.title
+        color: $fg-color-lighter
+        margin-top: $gap-xxl * 1.5
+        margin-bottom: $gap-small
+        font-weight: 100
+        font-size: $font-size-l * 1.25
+        letter-spacing: 2px
+
+    ul li:not(.title)
+        font-family: $font-text
+        letter-spacing: 0
+        color: $fg-color
+        letter-spacing: 1px
+        font-size: $font-size-l * 1.25
