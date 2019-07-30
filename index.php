@@ -174,7 +174,7 @@ random text
             </pre>
         </article>
 
-        <kbd class="version-info">
+        <kbd class="version-info hidden">
             version <span>5.23</span> |
             last updated 
             <span>

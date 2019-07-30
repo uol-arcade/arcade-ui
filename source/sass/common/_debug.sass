@@ -4,11 +4,14 @@
     font-family: $font-text
     font-size: $font-size-l
     letter-spacing: 1px
-
+    z-index: 10
+    
     position: absolute
     bottom: 0
     margin: $gap-xl
-    display: none
+
+    &.hidden
+        display: none
     
     span
         color: $highlight-color
@@ -23,7 +26,8 @@
     left: 0
     z-index: 5
     padding: $gap-xxxl
-
+    height: 100vh
+    
     .info nav
         font-size: $font-size-xl * 1.25
         font-family: $font-text
