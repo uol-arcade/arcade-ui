@@ -81,7 +81,7 @@
             </button>
         </article>
 
-        <article class="games screen hidden">
+        <article class="games screen">
             <button class="chevron left">
                 &lt;
             </button>
@@ -116,7 +116,7 @@
             </button>
         </article>
 
-        <article class="about screen">
+        <article class="about screen hidden">
             <article>
                 <h1>About</h1>
                 <p>
@@ -140,6 +140,29 @@
                     <kbd><span>B</span></kbd> Back
                 </button>
             </buttons>
+        </article>
+
+        <article class="debug screen hidden">
+            <aside class="info">
+                <nav>
+                    <?php echo date("h:i:s"); ?>
+                    Fingerprint (...)
+                </nav>
+                <ul>
+                    <li class="active">Restart machine</li>
+                    <li>Hard refresh page</li>
+                    <li>Shutdown</li>
+                    <li>Reboot Chrome</li>
+                    <li>Rerun startup batch file</li>
+                    <li>Reboot mapper</li>
+                    <li>Diagnose joy inputs</li>    
+                    <li>Show cheat bindings</li>
+                </ul>
+            </aside>
+            <pre class="console">
+Here is some
+random text
+            </pre>
         </article>
 
         <kbd class="version-info">

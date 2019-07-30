@@ -12,3 +12,47 @@
     
     span
         color: $highlight-color
+
+
+
+
+.debug.screen
+    display: grid
+    grid-template-columns: auto 1fr
+    top: 0
+    left: 0
+    z-index: 5
+    padding: $gap-xxxl
+
+    .info nav
+        font-size: $font-size-xl * 1.25
+        font-family: $font-text
+        border-bottom: 2px solid $fg-color
+        padding-bottom: $gap-small
+        margin-bottom: $gap-small * 3
+
+    .info
+        margin-right: $gap-xxl * 2
+
+    ul li
+        font-size: $font-size-xl
+        font-family: $font-text
+        letter-spacing: 1px
+        color: $fg-color-lighter
+        padding: 0
+        margin: 0
+
+    ul li.active
+        color: $highlight-color
+        animation: 0
+
+        &::before
+            content: none
+
+    pre
+        border: 2px solid $fg-color
+        padding: 0
+        margin: 0
+        margin-left: $gap-xxxl
+        font-family: monospace
+        padding: $gap-xl
