@@ -13,14 +13,14 @@ window.addEventListener("load", x =>
         mounted: function () 
         {
             let screen = document.querySelector(".start.screen");
-            arcade.keys.on("keyA", screen, this.A);
+            arcade.keys.on("keyStart", screen, this.startPressed);
         },
 
         methods:
         {
-            A()
+            startPressed()
             {
-                console.log("Hi");
+                ScreenSelector.setScreen("menu");
             }
         }
     });

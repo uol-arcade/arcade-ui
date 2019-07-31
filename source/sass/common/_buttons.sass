@@ -29,42 +29,40 @@ button.key.info
         font-family: $font-title
         margin-right: $gap-small
         color: $bg-color
+        position: relative
 
-        &.pressed
-            
-            position: relative
-            transition: 0.1s
-
-            &::before
-                display: block
-                position: absolute
-                transform: translate(-50%, -50%)
-                top: 50%
-                left: 50%
-                border-radius: 50%
-                animation: expand 0.5s forwards
-                background-color: transparent
-                border: 8px solid $fg-color
-                content: " "
-
-        span
-            padding-left: 2px
+    span
+        padding-left: 2px
 
     &.primary
         kbd
             background-color: $button-primary-color
             color: $bg-color
 
+.pressed
+    
+    position: absolute
+    display: block
+    position: absolute
+    transform: translate(-50%, -50%)
+    top: 50%
+    left: 50%
+    border-radius: 50%
+    animation: expand 0.5s forwards
+    background-color: transparent
+    border: 8px solid $fg-color
+    content: " "
+
 @keyframes expand
     0%
         height: 0px
         width: 0px
         opacity: 1.0
-        border-width: 20px
+        border-width: 10px
 
     100%
-        height: 200%
-        width: 200%
+        height: 75px
+        width: 75px
         border-width: 0px
 
 button.chevron

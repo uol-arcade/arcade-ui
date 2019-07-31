@@ -4,16 +4,22 @@ $aside-width: 600px
 .games.screen
     padding: $gap-xxxl * 1.25 0
     width: 100vw
+    height: 100vh
     position: absolute
     top: 50vh
     display: grid
     grid-template-columns: 1fr 1fr 1fr
     transform: translateY(-50%)
+    background-color: $bg-color
 
     .game
         display: grid
         grid-template-columns: auto 1fr
 
+        figure
+            display: flex
+            align-items: center
+            
         .buttons
             padding-top: $gap-l * 2.5
             display: flex

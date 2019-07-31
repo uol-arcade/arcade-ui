@@ -68,11 +68,8 @@ window.addEventListener("load", x =>
             {
                 let button = this.$el.querySelector(".key.info.primary kbd");
 
-                if(button.classList.contains("pressed"))
-                    return;
-
-                button.classList.toggle("pressed");
-                window.setTimeout(() => { button.classList.toggle("pressed"); }, 500);
+                PressEffect.spawn(button);
+                
                 arcade.launchGame(this.currentGame.path, 500);
             },
 
@@ -80,11 +77,7 @@ window.addEventListener("load", x =>
             {
                 let button = this.$el.querySelector(".key.info.secondary kbd");
 
-                if (button.classList.contains("pressed"))
-                    return;
-
-                button.classList.toggle("pressed");
-                window.setTimeout(() => { button.classList.toggle("pressed"); }, 500);
+                PressEffect.spawn(button);
             },
 
             left()

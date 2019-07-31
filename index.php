@@ -29,9 +29,7 @@
         <article class="menu screen hidden">
             <img class="header" src="assets/images/research-arcade-header.png"/>
             <ul class="centered">
-                <li class="active">Games</li>
-                <li>Credits</li>
-                <li>About</li>
+                <li :class="{ 'active': index == currentIndex }" v-for="(item, index) in items">{{ item.title }}</li>
             </ul>
         </article>
 
