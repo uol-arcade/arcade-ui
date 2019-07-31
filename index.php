@@ -17,7 +17,11 @@
     </head>
     <body>
 
-        <article class="start screen hidden">
+        <video id="background-video" autoplay loop muted>
+            <source id="background-source" src="assets/video/games-showreel.mp4" type="video/mp4">
+        </video>
+
+        <article class="start screen">
             <img class="splash" src="assets/images/press-start.png"/>
             <h3>Use the joystick to navigate</h3>
         </article>
@@ -87,7 +91,7 @@
             </button>
         </article>
 
-        <article class="games screen" @keyup.right="right">
+        <article class="games screen hidden" @keyup.right="right">
             <button class="chevron left">
                 <span v-show="currentIndex > 0">&lt;</span>
             </button>

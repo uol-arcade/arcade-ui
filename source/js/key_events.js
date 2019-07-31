@@ -34,5 +34,5 @@ window.addEventListener("keydown", arcade.keys.dispatchEvents.bind(this));
 
 window.addEventListener("load", () =>
 {
-    arcade.keys.currentListener = arcade.vue_games.$el;
+    ScreenSelector.setScreen("start");
 });
