@@ -64,7 +64,7 @@ window.addEventListener("load", x =>
                 let target = this.items[this.currentIndex].target;
 
                 let elem = document.querySelector(".menu.screen li.active");
-                PressEffect.spawn(elem);
+                // PressEffect.spawn(elem);
 
                 ScreenSelector.setScreen(target);
             }

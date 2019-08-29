@@ -59,10 +59,10 @@
                         <li>Charlie Volland-Butler</li>
                         <li>Chris Headleand</li>
                     </ul>
-                    <ul>
+                    <!-- <ul>
                         <li class="title">Hosted Games Developers</li>
                         <li>Chris Ross</li>
-                    </ul>
+                    </ul> -->
                     <ul>
                         <li class="title">Previous Developers</li>
                         <li>Ben Hide</li>
@@ -136,7 +136,7 @@
                 </p>
                 <p>
                     All of the games featured on this machine are free to play, and are independently created by our
-                    staff and students. By playing our games, you are contributing to our research! For more information, scan the QR
+                    students. By playing these games, you are contributing to our research! For more information, scan the QR
                     code to the right, or head on over to <span>&lt;http://researcharcade.com/&gt;</span>.
                 </p><p>
                     If you wish to create a game to be hosted here, please get in touch with Benjamin Williams
@@ -153,7 +153,7 @@
             </buttons>
         </article>
 
-        <article class="debug screen hidden">
+        <article class="debug screen">
             <aside class="info">
                 <nav>
                     <?php echo date("h:i:s"); ?>

@@ -61,7 +61,7 @@ window.addEventListener("load", x =>
                 game.classList.toggle("transitionOut");
                 game.classList.toggle("transitionIn");
 
-                window.setTimeout(() => { game.classList.toggle("transitionIn"); }, 1500);
+                window.setTimeout(() => { game.classList.toggle("transitionIn"); }, 1000);
             },
 
             A()
@@ -77,7 +77,8 @@ window.addEventListener("load", x =>
             {
                 let button = this.$el.querySelector(".key.info.secondary kbd");
 
-                PressEffect.spawn(button);
+                // PressEffect.spawn(button);
+                ScreenSelector.setScreen("menu");
             },
 
             left()

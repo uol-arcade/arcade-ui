@@ -160,12 +160,14 @@ cheatDetector.mapKey(["a","b","c","d","e","f"], [70, 71, 72, 74, 75, 76]);
 //deadbeef on p2
 cheatDetector.onCheat("deadbeef", function (data) 
 {
+    console.log("deadbeef");
     document.querySelector(".debug.screen").classList.toggle("hidden");
 });
 
 
 cheatDetector.onCheat("cafe", function (data) 
 {
+    console.log("cafe");
     document.querySelector(".version-info").classList.toggle("hidden");
 });
 
