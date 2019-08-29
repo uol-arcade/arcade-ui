@@ -85,6 +85,8 @@ window.addEventListener("load", x =>
                 if(this.currentIndex == 0)
                     return;
 
+                PressEffect.spawn(document.querySelector(".chevron.left span"));
+
                 this.transitionOut(function()
                 {
                     this.currentIndex--;
@@ -96,6 +98,8 @@ window.addEventListener("load", x =>
             {
                 if (this.currentIndex == this.games.length - 1)
                     return;
+
+                PressEffect.spawn(document.querySelector(".chevron.right span"));
 
                 this.transitionOut(function () 
                 {
