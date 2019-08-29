@@ -1,3 +1,9 @@
+<?php
+    
+require 'vendor/autoload.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +15,8 @@
 
         <script type="text/javascript">
         var arcade = {};
+
+        arcade.games = <?php require("api/games.php"); ?>;
         </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>

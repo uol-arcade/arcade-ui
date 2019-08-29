@@ -1,6 +1,9 @@
 
 # videos
-
 *.mp4
 *.avi
 *.mov
+
+# password file
+mongo_connect_file
+

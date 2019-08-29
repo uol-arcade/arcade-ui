@@ -17,24 +17,24 @@ window.addEventListener("load", x =>
                     author: "Benjamin Williams",
                     description: "Lorem ipsum dolor, sit amet consectetur elit. Sunt a mazime iste.",
                     path: "pacman-unlimited"
-                },
+                }
 
-                {
-                    title: "Qong",
-                    genre: "Sports",
-                    players: 1,
-                    imagePath: "assets/images/qong.png",
-                    author: "Benjamin Williams",
-                    description: "Lorem ipsum dolor, sit amet consectetur elit. Sunt a mazime iste. Lorem. Ipsum.",
-                    path: "qong"
-                },
-
-
+                // {
+                //     title: "Qong",
+                //     genre: "Sports",
+                //     players: 1,
+                //     imagePath: "assets/images/qong.png",
+                //     author: "Benjamin Williams",
+                //     description: "Lorem ipsum dolor, sit amet consectetur elit. Sunt a mazime iste. Lorem. Ipsum.",
+                //     path: "qong"
+                // },
             ]
         },
 
         mounted: function()
         {
+            this.games = arcade.games;
+
             arcade.keys.on("keyLeft",  this.$el, this.left);
             arcade.keys.on("keyRight", this.$el, this.right);
             arcade.keys.on("keyA",     this.$el, this.A);
