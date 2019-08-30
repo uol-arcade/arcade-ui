@@ -16,7 +16,9 @@ require 'vendor/autoload.php';
         <script type="text/javascript">
         var arcade = {};
 
-        arcade.games = <?php require("api/games.php"); ?>;
+        arcade.games   = <?php require("api/games.php"); ?>;
+        arcade.about   = <?php require("api/about.php"); ?>;
+        arcade.credits = <?php require("api/credits.php"); ?>;
         </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
@@ -46,49 +48,13 @@ require 'vendor/autoload.php';
                 <article>
                     <header>
                         <img class="credits-header" src="assets/images/research-arcade-header.png"/>
-                        <p>
-                            A project hosted and developed within the University of Lincoln School of Computer Science.
-                            Copyright &copy; University of Lincoln 2017-<?php echo date("Y"); ?>. All rights reserved.
-                            Design, development and maintenance by Benjamin Williams &lt;bwilliams@lincoln.ac.uk&gt;.
-                            More information can be found at &lt;http://researcharcade.com/&gt;.
+                        <p v-html="credits_header">
+                            
                         </p>
                     </header>
-                    <ul>
-                        <li class="title">Project Lead</li>
-                        <li>Chris Headleand</li>
-                    </ul>
-                    <ul>
-                        <li class="title">Architecture Lead</li>
-                        <li>Benjamin Williams</li>
-                    </ul>
-                    <ul>
-                        <li class="title">Cabinet Design / Build</li>
-                        <li>Alex Chapman</li>
-                        <li>Charlie Volland-Butler</li>
-                        <li>Chris Headleand</li>
-                    </ul>
-                    <!-- <ul>
-                        <li class="title">Hosted Games Developers</li>
-                        <li>Chris Ross</li>
-                    </ul> -->
-                    <ul>
-                        <li class="title">Previous Developers</li>
-                        <li>Ben Hide</li>
-                        <li>Jake Harrington</li>
-                        <li>Marlon Gilliam</li>
-                        <li>Tom Smith</li>
-                    </ul>
-                    <ul>
-                        <li class="title">Technical Support</li>
-                        <li>Matt Ashton</li>
-                        <li>Jason Hall</li>
-                        <li>Jeff Pashley</li>
-                        <li>Tom Reed</li>
-                    </ul>
-                    <ul>
-                        <li class="title">Thanks</li>
-                        <li>Kieran Hicks</li>
-                        <li>The intLab research group</li>
+                    <ul v-for="(value, key) in credits">
+                        <li class="title">{{ key }}</li>
+                        <li v-for="entry in value">{{ entry }}</li>
                     </ul>
                 </article>
             </section>
@@ -138,21 +104,11 @@ require 'vendor/autoload.php';
         <article class="about screen hidden">
             <article>
                 <h1>About</h1>
-                <p>
-                    This project was developed within intLab, a research group at the University of Lincoln focusing
-                    on human-computer interaction and video games.
-                </p>
-                <p>
-                    All of the games featured on this machine are free to play, and are independently created by our
-                    students. By playing these games, you are contributing to our research! For more information, scan the QR
-                    code to the right, or head on over to <span>&lt;http://researcharcade.com/&gt;</span>.
-                </p><p>
-                    If you wish to create a game to be hosted here, please get in touch with Benjamin Williams
-                    at <span>&lt;bwilliams@lincoln.ac.uk&gt;</span> for further details!
-                </p>
+                <span v-html="html">
+                </span>
             </article>
             <figure>
-                <img src="assets/images/qr.png"/>
+                <img :src="qr_path"/>
             </figure>
             <section class="buttons">
                 <button class="key info primary">
