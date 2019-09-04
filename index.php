@@ -1,6 +1,7 @@
 <?php
     
 require_once 'vendor/autoload.php';
+require_once 'api/ArcadeFileLister.php';
 require_once 'api/mongo/MongoArcadeClient.php';
 
 ?>
@@ -22,6 +23,8 @@ require_once 'api/mongo/MongoArcadeClient.php';
             # Print out the connection string
             print($client->getJSON());
         ?>
+
+        arcade.videos = <?php print(Arcade\FileLister::listDirectoryJSArray("assets/video")); ?>;
         </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
