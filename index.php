@@ -1,6 +1,7 @@
 <?php
     
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
+require_once 'api/mongo/MongoArcadeClient.php';
 
 ?>
 
@@ -14,11 +15,13 @@ require 'vendor/autoload.php';
         <link href="dist/css/arcade-ui.min.css" rel="stylesheet" type="text/css"/>
 
         <script type="text/javascript">
-        var arcade = {};
+        <?php
+            # Make a new client
+            $client = new Arcade\MongoClient("api/config/mongo_connect_file");
 
-        arcade.games   = <?php require("api/games.php"); ?>;
-        arcade.about   = <?php require("api/about.php"); ?>;
-        arcade.credits = <?php require("api/credits.php"); ?>;
+            # Print out the connection string
+            print($client->getJSON());
+        ?>
         </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
