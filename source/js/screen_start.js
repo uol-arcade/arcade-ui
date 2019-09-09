@@ -18,6 +18,8 @@ window.addEventListener("load", x =>
 
         methods:
         {
+
+
             startPressed()
             {
                 AudioManager.playSelect();

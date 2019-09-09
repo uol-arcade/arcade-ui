@@ -123,21 +123,23 @@ require_once 'api/mongo/MongoArcadeClient.php';
             </buttons>
         </article>
 
-        <article class="debug screen">
+        <article class="debug screen hidden">
             <aside class="info">
                 <nav>
-                    <?php echo date("h:i:s"); ?>
-                    Fingerprint (...)
+                    <?php echo date("h:i:s") . " (refresh)"; ?><br>
+                    {{ timeStr }}<br>
+                    {{ heapStr }}
                 </nav>
                 <ul>
-                    <li class="active">Restart machine</li>
+                    <li :click="item" v-for="(item, index) in items">{{ index }}</li>
+                    <!-- <li class="active">Restart machine</li>
                     <li>Hard refresh page</li>
                     <li>Shutdown</li>
                     <li>Reboot Chrome</li>
                     <li>Rerun startup batch file</li>
                     <li>Reboot mapper</li>
                     <li>Diagnose joy inputs</li>    
-                    <li>Show cheat bindings</li>
+                    <li>Show cheat bindings</li> -->
                 </ul>
             </aside>
             <pre class="console">
