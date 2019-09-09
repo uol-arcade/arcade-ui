@@ -38,7 +38,11 @@ window.addEventListener("load", x =>
 
         methods:
         {
-            back: () => ScreenSelector.setScreen("menu")
+            back: () => 
+            {
+                ScreenSelector.setScreen("menu");
+                AudioManager.playBack();
+            }
         }
     });
 
@@ -62,7 +66,11 @@ window.addEventListener("load", x =>
 
         methods:
         {
-            back: () => ScreenSelector.setScreen("menu")
+            back: () => 
+            {
+                ScreenSelector.setScreen("menu");
+                AudioManager.playBack();
+            }
         }
     });
 });

@@ -20,6 +20,7 @@ window.addEventListener("load", x =>
         {
             startPressed()
             {
+                AudioManager.playSelect();
                 ScreenSelector.setScreen("menu");
             }
         }

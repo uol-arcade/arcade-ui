@@ -43,10 +43,12 @@ window.addEventListener("load", x =>
             back()
             {
                 ScreenSelector.setScreen("start");
+                AudioManager.playBack();
             },
 
             moveDown() {
                 this.currentIndex = (this.currentIndex + 1) % this.items.length;
+                AudioManager.playMove();
             },
 
             moveUp() 
@@ -57,6 +59,7 @@ window.addEventListener("load", x =>
                     this.currentIndex = (this.currentIndex - 1);
 
                 let elem = document.querySelector(".menu.screen li.active");
+                AudioManager.playMove();
             },
 
             selectItem(event) 
@@ -67,6 +70,7 @@ window.addEventListener("load", x =>
                 // PressEffect.spawn(elem);
 
                 ScreenSelector.setScreen(target);
+                AudioManager.playSelect();
             }
         }
     });

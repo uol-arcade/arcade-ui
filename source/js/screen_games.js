@@ -71,6 +71,8 @@ window.addEventListener("load", x =>
                 PressEffect.spawn(button);
                 
                 arcade.launchGame(this.currentGame.path, 500);
+
+                AudioManager.playSelect();
             },
 
             B()
@@ -79,12 +81,17 @@ window.addEventListener("load", x =>
 
                 // PressEffect.spawn(button);
                 ScreenSelector.setScreen("menu");
+
+                AudioManager.playBack();
             },
 
             left()
             {
                 if(this.currentIndex == 0)
+                {
+                    AudioManager.playBack();
                     return;
+                }
 
                 PressEffect.spawn(document.querySelector(".chevron.left span"));
 
@@ -93,12 +100,17 @@ window.addEventListener("load", x =>
                     this.currentIndex--;
                     this.transitionIn();
                 });
+
+                AudioManager.playMove();
             },
 
             right()
             {
                 if (this.currentIndex == this.games.length - 1)
+                {
+                    AudioManager.playBack();
                     return;
+                }
 
                 PressEffect.spawn(document.querySelector(".chevron.right span"));
 
@@ -107,6 +119,8 @@ window.addEventListener("load", x =>
                     this.currentIndex++;
                     this.transitionIn();
                 });
+
+                AudioManager.playMove();
             }
         },
 
