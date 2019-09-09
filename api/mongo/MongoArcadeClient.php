@@ -49,9 +49,9 @@
             [
                 "about"   => "getAboutJSON",
                 "credits" => "getCreditsJSON",
-                "games"   => "getGamesJSON"
+                "games"   => "getGamesJSON",
+                "videos"  => "getVideosJSON"
             ];
-
 
             # Append js for each entry
             foreach($funcs as $k => $v)
@@ -69,6 +69,26 @@
             # Format them into JSON
             return $this->jsonify($cursor);
         }
+
+        public function printVideoPreloadHTML()
+        {
+            # Get all the videos
+            $cursor = $this->client->arcade->videos->find([], [ "projection" => [ '_id' => 0] ]);
+
+            # Run through each, print out preload url
+            foreach($cursor as $video)
+                print("<link rel=\"preload\" as=\"video\" crossorigin=\"anonymous\" type=\"video/mp4\" href=\"" . $video["path"] . "\"/>\n");
+        }
+
+        public function getVideosJSON()
+        {
+            # Get all the games 
+            $cursor = $this->client->arcade->videos->find([], [ "projection" => [ '_id' => 0] ]);
+
+            # Format them into JSON
+            return $this->jsonify($cursor);
+        }
+
 
         public function getCreditsJSON()
         {

@@ -9,7 +9,7 @@
          * Returns a directory as a JS array
          */
         public static function listDirectoryJSArray($path)
-        {
+        { 
             # Get the files in this directory
             $files = scandir($path); 
 

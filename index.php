@@ -23,9 +23,9 @@ require_once 'api/mongo/MongoArcadeClient.php';
             # Print out the connection string
             print($client->getJSON());
         ?>
-
-        arcade.videos = <?php print(Arcade\FileLister::listDirectoryJSArray("assets/video")); ?>;
         </script>
+
+        <?php $client->printVideoPreloadHTML(); ?>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
         <script src="source/js.min.js"></script>
@@ -33,7 +33,7 @@ require_once 'api/mongo/MongoArcadeClient.php';
     </head>
     <body>
 
-        <video id="background-video" autoplay loop muted>
+        <video id="background-video" autoplay muted>
             <source id="background-source" src="assets/video/games-showreel.mp4" type="video/mp4">
         </video>
 
