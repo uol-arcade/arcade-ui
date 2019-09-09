@@ -52,7 +52,7 @@ window.addEventListener("load", x =>
                 
                 game.classList.toggle("transitionOut");
 
-                window.setTimeout(func.bind(this), 600);
+                window.setTimeout(func.bind(this), 10);
             },
 
             transitionIn(func) 
