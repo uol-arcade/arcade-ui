@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | test-game</title>
+    <style>
+	@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+	
+	body
+	{
+		margin:0;
+		padding:0;
+		overflow:hidden;
+		background-color:black;
+		color:white;
+	}
+	
+    .wrapper
+	{
+		position:absolute;
+		width:100%;
+		height:100%;
+		margin:0;
+		padding:0;
+		overflow:hidden;
+	}
+	
+	canvas
+	{
+		width:100%;
+		height:100%;
+	}
+	
+	.loading
+	{
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%, -50%);
+		font-family:"Press Start 2P", monospace;
+		font-size:32pt;
+		animation:flash 1s infinite;
+	}
+	
+	@keyframes flash
+	{
+		50% { color: red; }
+	}
+    </style>
+  </head>
+  <body>
+	<div class="loading">Loading...</div>
+	<div class="wrapper">
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+	</div>
+    <script type='text/javascript'>
+  var Module = {
+    TOTAL_MEMORY: 268435456,
+    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+    compatibilitycheck: null,
+    backgroundColor: "#808080",
+    splashStyle: "Light",
+    dataUrl: "Release/build.data",
+    codeUrl: "Release/build.js",
+    asmUrl: "Release/build.asm.js",
+    memUrl: "Release/build.mem",
+  };
+</script>
+<script type="text/javascript">
+var loaded = false;
+setInterval(function()
+{
+	if(loaded)
+		return;
+		
+	loaded = true;
+	
+	document.getElementsByClassName("loading")[0].style.display = "none";
+}, 500);
+</script>
+<script src="Release/UnityLoader.js"></script>
+
+  </body>
+</html>
