@@ -47,10 +47,11 @@
             # Funcs
             $funcs = 
             [
-                "about"   => "getAboutJSON",
-                "credits" => "getCreditsJSON",
-                "games"   => "getGamesJSON",
-                "videos"  => "getVideosJSON"
+                "about"     => "getAboutJSON",
+                "credits"   => "getCreditsJSON",
+                "main_menu" => "getMainMenuJSON",
+                "games"     => "getGamesJSON",
+                "videos"    => "getVideosJSON"
             ];
 
             # Append js for each entry
@@ -59,6 +60,15 @@
 
             # And return data
             return $data;
+        }
+
+        public function getMainMenuJSON()
+        {
+            # Find all documents, filter _id out
+            $cursor = $this->client->arcade->text->findOne(["section" => "main_menu_text"], [ "projection" => [ '_id' => 0] ]);
+
+            # Format them into JSON
+            return $this->jsonify($cursor);
         }
 
         public function getAboutJSON()

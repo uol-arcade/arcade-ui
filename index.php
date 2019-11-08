@@ -47,6 +47,8 @@ require_once 'api/mongo/MongoArcadeClient.php';
             <ul class="centered">
                 <li :class="{ 'active': index == currentIndex }" v-for="(item, index) in items">{{ item.title }}</li>
             </ul>
+            <p v-html="arcade.main_menu.html">
+            </p>
         </article>
 
         <article class="credits screen hidden">
@@ -123,7 +125,7 @@ require_once 'api/mongo/MongoArcadeClient.php';
             </buttons>
         </article>
 
-        <article class="debug screen hidden">
+        <!-- <article class="debug screen hidden">
             <aside class="info">
                 <nav>
                     <?php echo date("h:i:s") . " (refresh)"; ?><br>
@@ -132,21 +134,13 @@ require_once 'api/mongo/MongoArcadeClient.php';
                 </nav>
                 <ul>
                     <li :click="item" v-for="(item, index) in items">{{ index }}</li>
-                    <!-- <li class="active">Restart machine</li>
-                    <li>Hard refresh page</li>
-                    <li>Shutdown</li>
-                    <li>Reboot Chrome</li>
-                    <li>Rerun startup batch file</li>
-                    <li>Reboot mapper</li>
-                    <li>Diagnose joy inputs</li>    
-                    <li>Show cheat bindings</li> -->
                 </ul>
             </aside>
             <pre class="console">
 Here is some
 random text
             </pre>
-        </article>
+        </article> -->
 
         <kbd class="version-info hidden">
             version <span>5.23</span> |
